@@ -12,7 +12,9 @@ app.get("/", function(req, res){
 let dataJson = {"message": "Hello json"};
 
 app.get('/json', function(req, res){
-    if (process.env.MESSAGE_STYLE === 'uppercase') {
+    const MESSAGE_STYLE = process.env.MESSAGE_STYLE
+    
+    if (MESSAGE_STYLE === 'uppercase') {
         dataJson.message = dataJson.message.toUpperCase();
       };
       
