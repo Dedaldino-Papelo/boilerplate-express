@@ -6,6 +6,11 @@ require('dotenv').config()
 //middlewares
 app.use('/public', express.static(path.join(__dirname + '/public')))
 
+app.use(function middleware(req, res, next){
+    console.log(req.method + ' ' + req.path + ' - ' + req.ip)
+    next()
+})
+
 app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, '/views/index.html'))
 })
