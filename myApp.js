@@ -9,10 +9,8 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, '/views/index.html'))
 })
 
-const msg = process.env.MESSAGE_STYLE
-
 app.get("/json", function(req, res){
-    if(msg === "uppercase") {
+    if(process.env.MESSAGE_STYLE == "uppercase") {
         res.json({"message": "HELLO JSON"})
     } else {
         res.json({"message": "Hello json"})
