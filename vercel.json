@@ -1,6 +1,3 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-    "env": {
-        "MESSAGE_STYLE": "uppercase"
-      }
+    "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
