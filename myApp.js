@@ -10,12 +10,16 @@ app.get("/", function(req, res){
 })
 
 app.get("/json", function(req, res){
-    let message = "Hello json"
+    const messageStyle = process.env.MESSAGE_STYLE || 'uppercase';
 
-    if (process.env.MESSAGE_STYLE === "uppercase") {
-        message = message.toUpperCase()
-    } 
-    res.json({ message })
+  // Check the value of MESSAGE_STYLE and transform the message accordingly
+  let message = 'Hello json';
+  if (messageStyle === 'uppercase') {
+    message = message.toUpperCase();
+  }
+
+  // Send the response as JSON
+  res.json({ message });
 
 })
 
