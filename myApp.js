@@ -20,6 +20,8 @@ app.get('/json', (req, res) => {
     }
 })
 
+module.exports = app
+
 
 
 
